@@ -1,0 +1,20 @@
+{
+  "name": "gitploy",
+  "version": "0.0.0",
+  "description": "Deploy directory to Git branch.",
+  "author": "Mark <mark@remarkablemark.org>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/remarkablemark/gitploy"
+  },
+  "bugs": {
+    "url": "https://github.com/remarkablemark/gitploy/issues"
+  },
+  "keywords": [
+    "git",
+    "branch",
+    "deploy",
+    "release"
+  ],
+  "license": "MIT"
+}
