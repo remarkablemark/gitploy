@@ -20,6 +20,8 @@
     "release"
   ],
   "devDependencies": {
+    "@commitlint/cli": "5.2.5",
+    "@commitlint/config-conventional": "5.2.3",
     "eslint": "4.11.0"
   },
   "license": "MIT"
