@@ -24,7 +24,8 @@
     "@commitlint/cli": "5.2.5",
     "@commitlint/config-conventional": "5.2.3",
     "eslint": "4.11.0",
-    "husky": "0.14.3"
+    "husky": "0.14.3",
+    "standard-version": "4.2.0"
   },
   "license": "MIT"
 }
