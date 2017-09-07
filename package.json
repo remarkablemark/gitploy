@@ -5,7 +5,8 @@
   "author": "Mark <mark@remarkablemark.org>",
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
-    "lint": "eslint --ignore-path .gitignore ."
+    "lint": "eslint --ignore-path .gitignore .",
+    "lint:fix": "npm run lint -- --fix"
   },
   "repository": {
     "type": "git",
