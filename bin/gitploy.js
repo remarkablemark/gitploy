@@ -2,14 +2,13 @@
 
 'use strict';
 
-/* eslint-disable no-console */
-
 /**
  * Display package information.
  */
 var pkg = require('../package.json');
 var GITPLOY = pkg.name;
-console.info('Version:', GITPLOY, pkg.version);
+var logger = require('./utils/logger');
+logger.info('Version:', GITPLOY, pkg.version);
 
 /**
  * Get command line arguments.
@@ -28,8 +27,8 @@ if (!directory && !branch) {
 }
 
 if (errorMessage) {
-  console.info('Usage:', GITPLOY, '<directory> <branch>');
-  console.error(errorMessage);
+  logger.info('Usage:', GITPLOY, '<directory> <branch>');
+  logger.error(errorMessage);
   process.exit(9);
 }
 
@@ -68,7 +67,7 @@ var originUrl = execSync('git remote get-url origin').toString().trim();
 try {
   process.chdir(directory);
 } catch (error) {
-  console.error('Error: No such directory:', directory);
+  logger.error('Error: No such directory:', directory);
   process.exit(9);
 }
 
@@ -83,7 +82,7 @@ execSync('git remote add origin ' + originUrl);
  */
 var state = execSync('git status --short').toString().trim();
 if (!state) {
-  console.error('Error: No files found in:', directory);
+  logger.error('Error: No files found in:', directory);
   process.exit(1);
 }
 
@@ -96,5 +95,5 @@ execSync('git commit --message "' + GITPLOY + '" --author="' + author + '"');
 /**
  * Push to deploy branch.
  */
-console.info('Info: Deploying to branch:', branch);
+logger.info('Info: Deploying to branch:', branch);
 execSync('git push --force origin master:' + branch);
