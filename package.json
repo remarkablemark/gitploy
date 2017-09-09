@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Deploy directory to Git branch.",
   "author": "Mark <mark@remarkablemark.org>",
+  "bin": {
+    "gitploy": "./bin/gitploy.js"
+  },
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ignore-path .gitignore .",
