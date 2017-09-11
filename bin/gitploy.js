@@ -20,6 +20,8 @@ var branch = process.argv[3];
  * Exit if arguments are invalid.
  */
 var errorMessage;
+var exit = require('./utils/exit');
+
 if (!directory && !branch) {
   errorMessage = 'Error: Expected arguments <directory> and <branch>';
 } else if (!branch) {
@@ -29,7 +31,7 @@ if (!directory && !branch) {
 if (errorMessage) {
   logger.info('Usage:', GITPLOY, '<directory> <branch>');
   logger.error(errorMessage);
-  process.exit(9);
+  exit(9);
 }
 
 /**
@@ -44,7 +46,7 @@ try {
   execSync('git --version');
 } catch (error) {
   // git: command not found
-  process.exit(1);
+  exit(1);
 }
 
 /**
@@ -68,7 +70,7 @@ try {
   process.chdir(directory);
 } catch (error) {
   logger.error('Error: No such directory:', directory);
-  process.exit(9);
+  exit(9);
 }
 
 /**
@@ -83,7 +85,7 @@ execSync('git remote add origin ' + originUrl);
 var state = execSync('git status --short').toString().trim();
 if (!state) {
   logger.error('Error: No files found in:', directory);
-  process.exit(1);
+  exit(1);
 }
 
 /**
