@@ -9,7 +9,8 @@
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "lint": "eslint --ignore-path .gitignore .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
