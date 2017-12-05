@@ -30,6 +30,7 @@
     "@commitlint/config-conventional": "5.2.3",
     "eslint": "4.11.0",
     "husky": "0.14.3",
+    "istanbul": "0.4.5",
     "mocha": "4.0.1",
     "proxyquire": "1.8.0",
     "sinon": "4.1.3",
