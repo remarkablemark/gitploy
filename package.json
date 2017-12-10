@@ -8,6 +8,7 @@
   },
   "scripts": {
     "commitmsg": "commitlint -e $GIT_PARAMS",
+    "cover": "istanbul cover _mocha",
     "lint": "eslint --ignore-path .gitignore .",
     "lint:fix": "npm run lint -- --fix",
     "test": "mocha"
